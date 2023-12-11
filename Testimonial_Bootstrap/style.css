@@ -1,0 +1,132 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+:root {
+    --moderate-violet: hsl(263, 55%, 52%);
+    ---grayish-blue: hsl(217, 19%, 35%);
+    --blackish-blue: hsl(219, 29%, 14%);
+    --light-gray: hsl(0, 0%, 81%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+  }
+  
+  body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    min-height: 100vh;
+    background-color: var(--light-grayish-blue);
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    width: 1200px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "one one two five"
+      "three four four five";
+    grid-gap: 30px;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+  }
+  
+  .box {
+    border-radius: 5px;
+    padding: 30px;
+  }
+  
+  .box .title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+  }
+  
+  
+  .box .title img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  .box .title .text {
+    color: #fff;
+  }
+  
+  
+  .box .title .text.dark {
+    color: unset;
+  } 
+  
+  .box .title .text.dark p {
+    color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .box .title .text p {
+    color: rgba(255, 255, 255, 0.5)
+  }
+  
+  .box > h3 {
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  
+  .box-5 > h3,
+  .box-3 > h3 {
+    color: var(--blackish-blue);
+  }
+  
+  .box > p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 15px;
+  }
+  
+  .box-3 > p,
+  .box-5 > p {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 15px;
+  }
+  
+  
+  
+  .box-1 {
+    grid-area: one;
+    background-color: var(--moderate-violet);
+    background-image: url(bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: top right 18%;
+  }
+  
+  .box-2 {
+    grid-area: two;
+    background-color: var(---grayish-blue);
+  }
+  
+  .box-3 {
+    grid-area: three;
+    background-color: #fff;
+  }
+  
+  .box-4 {
+    grid-area: four;
+    background-color: var(--blackish-blue);
+  }
+  
+  .box-5 {
+    grid-area: five;
+    background-color: #fff;
+  }
+  @media screen and (max-width: 785px){
+    .container{
+      display: block;
+      width: 100%;
+     margin-bottom: 10px;
+    }
+  }
